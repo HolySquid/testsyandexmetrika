@@ -22,7 +22,7 @@
 
     function redirectWithYmUid() {
       const ym_uid = getCookie('_ym_uid');
-      const baseUrl = 'https://paywall.pw';
+      const baseUrl = 'https://stage3.paywall.pw/zqdwy53kqlor';
       const redirectUrl = ym_uid ? `${baseUrl}?ym_uid=${encodeURIComponent(ym_uid)}` : baseUrl;
       window.location.href = redirectUrl;
     }
