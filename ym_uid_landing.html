@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Проверка Яндекс Метрики</title>
+</head>
+<body>
+  <h1>Проверка сквозной аналитики</h1>
+  <p>Нажмите кнопку, чтобы выполнить редирект с передачей clientID (ym_uid).</p>
+  <button onclick="redirectWithYmUid()">Перейти на Paywall</button>
+
+  <script>
+    // Получение значения куки по имени
+    function getCookie(name) {
+      const matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([$?*|{}()[\]\/+^])/g, '\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function redirectWithYmUid() {
+      const ym_uid = getCookie('_ym_uid');
+      const baseUrl = 'https://paywall.pw';
+      const redirectUrl = ym_uid ? `${baseUrl}?ym_uid=${encodeURIComponent(ym_uid)}` : baseUrl;
+      window.location.href = redirectUrl;
+    }
+  </script>
+</body>
+</html>
