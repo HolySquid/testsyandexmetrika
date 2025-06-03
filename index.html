@@ -39,7 +39,7 @@
 
     function redirectWithYmUid() {
       const ym_uid = getCookie('_ym_uid');
-      const baseUrl = 'https://stage3.paywall.pw/test_test_metrica?utm_source=test&utm_medium=button&utm_campaign=metrica_test&utm_content=btn_click';
+      const baseUrl = 'https://stage3.paywall.pw/test_test_metrica?utm_source=test&utm_medium=button&utm_campaign=metrica_test&utm_content=btn_click' ;
       const redirectUrl = ym_uid ? `${baseUrl}?ym_uid=${encodeURIComponent(ym_uid)}` : baseUrl;
       window.location.href = redirectUrl;
     }
